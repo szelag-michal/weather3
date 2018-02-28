@@ -21,11 +21,6 @@
               </div>
         </div>
       </div>
-<div class='chart'>
-    <!-- import font awesome for legend icons -->
-    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
-    <chart-axis :data='chartData'></chart-axis>
-  </div>
 
 
     </div>  
@@ -33,48 +28,14 @@
 <script>
 import {HTTP} from './http-common';
 import fcDetails from './ForecastDetails.vue'
-import { svgArea, svgLine, svgScatter } from 'd2b'
-import { ChartAxis } from 'vue-d2b'
+
 import moment from 'moment'
 export default {
-  components: {
-    'fc-details': fcDetails,
-    'chartAxis': ChartAxis
-  },
+  components: {},
   data() {
     return {
       forecast: [],
-    chartData: {
-          sets: [
-            {
-              generators: [svgArea(), svgLine(), svgScatter()],
-              graphs: [
-                {
-                  label: 'Temperatures',
-                  values: [
-                    {x: 'Mon', y: 15},
-                    {x: 'Tue', y: 8},
-                    {x: 'Wed', y: 12},
-                    {x: 'Thu', y: 11},
-                    {x: 'Fri', y: 5},
-                    {x: 'Sat', y: 15}
-                  ]
-                },
-                {
-                  label: 'Wind Speed',
-                  values: [
-                    {x: 'Mon', y: 5},
-                    {x: 'Tue', y: 12},
-                    {x: 'Wed', y: 22},
-                    {x: 'Thu', y: 60},
-                    {x: 'Fri', y: 60},
-                    {x: 'Sat', y: 11}
-                  ]
-                }
-              ]
-            }
-          ]
-        }
+
     }
   },
   created() {
