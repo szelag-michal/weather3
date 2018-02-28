@@ -1,0 +1,25 @@
+@for $i from 1 through 10 {
+    .font-size-#{$i} {font-size: #{1*$i / 2}em}
+}
+$colors:
+    (sn, #2A3259, wi-snow, s),
+    (sl, #2A3259, wi-sleet, s),
+    (h, #2A3259, wi-hail, hr), 
+    (t, #2A3259, wi-thunderstorm, hr), 
+    (hr, #2A3259, wi-rain, hr), 
+    (lr, #388DE7, wi-sprinkle, lr), 
+    (s, #388DE7, wi-showers, lr), 
+    (hc, #F6A75C, wi-cloudy, lr), 
+    (lc, #F6A75C, wi-day-cloudy, sl),
+    (c, #EC7263, wi-day-sunny, c);
+
+    @each $code, $color, $icon, $bg in $colors {
+        .bg-#{$code} {background-color: $color;background-image: url('./assets/img/backgrounds/#{$bg}.png')}
+        .color-#{$code} {color: $color;}
+        .icon-#{$code} {@extend .#{$icon};}
+    }
+    .icon {font-family: weathericons;}
+    .card-block {color: #fff;}
+
+
+
